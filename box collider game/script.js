@@ -90,8 +90,8 @@ setInterval(() => {
 }, 2000)
 
 function gameLoop() {
-    if (!gameOn){ 
-       return;
+    if (!gameOn) {
+        return;
     }
     console.log('frame update')
     context.clearRect(0, 0, 500, 500)
@@ -102,11 +102,16 @@ function gameLoop() {
 
     if (isCollided(e1, player) || isCollided(e2, player) || isCollided(e3, player)) {
         gameOn = false
-        window.alert('Game Over')
+        let x = window.alert('Game Over');
+        if (!x)
+            window.location.reload();
     }
     if ((player.x + player.size) > 500) {
-        alert('you won!');
-        gameOn=false;
+        let x = alert('you won!');
+        gameOn = false;
+        if (!x)
+            window.location.reload();
+
     }
     drawBox(player)
     drawBox(e1)
