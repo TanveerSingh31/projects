@@ -1,0 +1,4 @@
+ul#list li.taskCompleted{
+    color: #6c757d;
+    text-decoration: line-through;
+}
