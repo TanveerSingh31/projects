@@ -46,8 +46,8 @@ class Enemy extends Box {
 
 let player = new Player()
 let e1 = new Enemy(4)
-let e2 = new Enemy(8)
-let e3 = new Enemy(12)
+let e2 = new Enemy(6)
+let e3 = new Enemy(8)
 e1.x = 100
 e2.x = 233
 e3.x = 366
@@ -84,10 +84,10 @@ paintbox.addEventListener('mouseup', () => {
     player.speed = 0
 })
 
-setInterval(() => {
-    playerSpeed = 5 + parseInt(Math.random() * 10)
-    player.y = 100 + (Math.random() * 300)
-}, 2000)
+// setInterval(() => {
+//     playerSpeed = 5 + parseInt(Math.random() * 10)
+//     player.y = 100 + (Math.random() * 300)
+// }, 2000)
 
 function gameLoop() {
     if (!gameOn) {
