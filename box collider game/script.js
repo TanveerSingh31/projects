@@ -59,7 +59,12 @@ e2.x = 233
 e3.x = 366
 
 function changeSpeed(level) {
-    if (level == 2) {
+    if (level == 1) {
+        e1.speed = 4;
+        e2.speed = 6;
+        e3.speed = 8;
+    }
+    else if (level == 2) {
         e1.speed = 6;
         e2.speed = 8;
         e3.speed = 9;
