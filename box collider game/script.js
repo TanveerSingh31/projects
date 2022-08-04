@@ -1,6 +1,8 @@
 let paintbox = document.getElementById('mycanvas')
 let context = paintbox.getContext('2d')
 
+
+
 let gameOn = true
 
 let playerSpeed = 5
@@ -42,6 +44,10 @@ class Enemy extends Box {
         }
 
     }
+
+    speedChange(speed) {
+        this.speed = speed
+    }
 }
 
 let player = new Player()
@@ -52,9 +58,21 @@ e1.x = 100
 e2.x = 233
 e3.x = 366
 
+function changeSpeed(level) {
+    if (level == 2) {
+        e1.speed = 6;
+        e2.speed = 8;
+        e3.speed = 9;
+    }
+    else if (level == 3) {
+        e1.speed = 10;
+        e2.speed = 9;
+        e3.speed = 12;
+    }
+}
+
 function isCollided(box1, box2) {
 
-    // fill this yourself
     if ((box1.x + box1.size) > box2.x && (box1.y + box1.size) > box2.y) {
         if (box1.x > (box2.x + box2.size)) {
             return false;
@@ -120,6 +138,12 @@ function gameLoop() {
 
 
     window.requestAnimationFrame(gameLoop)
+}
+
+function difficulty() {
+    let difficulty = document.getElementById('difficulty')
+    let value = difficulty.options[difficulty.selectedIndex].value;
+    changeSpeed(value);
 }
 
 gameLoop();
