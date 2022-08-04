@@ -74,6 +74,11 @@ function changeSpeed(level) {
         e2.speed = 9;
         e3.speed = 12;
     }
+    else {
+        e1.speed = 12;
+        e2.speed = 14;
+        e3.speed = 20;
+    }
 }
 
 function isCollided(box1, box2) {
@@ -130,7 +135,7 @@ function gameLoop() {
             window.location.reload();
     }
     if ((player.x + player.size) > 500) {
-        let x = alert('you won!');
+        let x = alert('Congratulations, \nyou won!');
         gameOn = false;
         if (!x)
             window.location.reload();
